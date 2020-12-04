@@ -10,12 +10,12 @@ public class UserService {
         for (int i = 0; i < records.length; i++) {
             String [] splitRecord = records[i].split(":");
             score = splitRecord[1];
-            if(email.equals(splitRecord[0])){
+            if (email.equals(splitRecord[0])) {
                 check = true;
                 return Integer.parseInt(score);
             }
         }
-        if(check == false){
+        if (check == false) {
             throw new UserNotFoundException("User with given email doesn't exist");
         }
         return 0;
